@@ -48,7 +48,7 @@
       暂无数据
     </view>
     <view wx:else class="stats-list">
-      <view class="stat-card" wx:for="{{yearlyStats}}" wx:key="year">
+      <view class="stat-card" wx:for="{{yearlyStats}}" wx:key="year" bindtap="goToYearDetail" data-year="{{item.year}}">
         <view class="stat-header">
           <text class="stat-period">{{item.year}} 年</text>
           <text class="stat-count">{{item.count}} 次</text>

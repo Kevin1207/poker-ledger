@@ -69,6 +69,7 @@
   font-size: 48rpx;
   font-weight: bold;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .amount-input.win {
@@ -88,6 +89,7 @@
   border-radius: 15rpx;
   padding: 20rpx;
   font-size: 28rpx;
+  box-sizing: border-box;
 }
 
 .date-picker {
@@ -98,6 +100,7 @@
   padding: 0 30rpx;
   font-size: 28rpx;
   color: #333;
+  box-sizing: border-box;
 }
 
 .submit-btn {

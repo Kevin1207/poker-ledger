@@ -77,5 +77,14 @@ Page({
     wx.navigateTo({
       url: `/pages/month-detail/month-detail?yearMonth=${yearmonth}`
     })
+  },
+
+  // 跳转到年度详情页面
+  goToYearDetail(e) {
+    const { year } = e.currentTarget.dataset
+    console.log('点击年份:', year)
+    wx.navigateTo({
+      url: `/pages/year-detail/year-detail?year=${year}`
+    })
   }
 })

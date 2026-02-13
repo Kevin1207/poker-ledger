@@ -1,0 +1,45 @@
+<!--pages/year-detail/year-detail.wxml-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="page-title">{{year}} 年</text>
+    <view class="page-summary">
+      <text class="summary-amount {{yearTotal >= 0 ? 'win' : 'lose'}}">
+        {{yearTotal >= 0 ? '+' : ''}}{{yearTotal}}
+      </text>
+      <text class="summary-count">共 {{totalCount}} 次</text>
+    </view>
+  </view>
+
+  <!-- 月度统计列表 -->
+  <view class="months-section">
+    <view wx:if="{{monthlyStats.length === 0}}" class="empty-tip">
+      本年还没有记录
+    </view>
+    <view wx:else class="stats-list">
+      <view class="stat-card" wx:for="{{monthlyStats}}" wx:key="month" bindtap="goToMonthDetail" data-yearmonth="{{year}}-{{item.month}}">
+        <view class="stat-header">
+          <text class="stat-period">{{item.month}}月</text>
+          <text class="stat-count">{{item.count}} 次</text>
+        </view>
+        <view class="stat-amount {{item.total >= 0 ? 'win' : 'lose'}}">
+          {{item.total >= 0 ? '+' : ''}}{{item.total}}
+        </view>
+        <view class="stat-detail">
+          <view class="detail-item win">
+            <text class="detail-label">赢</text>
+            <text class="detail-value">{{item.winCount}} 次</text>
+          </view>
+          <view class="detail-item lose">
+            <text class="detail-label">输</text>
+            <text class="detail-value">{{item.loseCount}} 次</text>
+          </view>
+          <view class="detail-item" wx:if="{{item.count > 0}}">
+            <text class="detail-label">胜率</text>
+            <text class="detail-value">{{item.winRate}}%</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -4,6 +4,7 @@
     "pages/add/add",
     "pages/statistics/statistics",
     "pages/month-detail/month-detail",
+    "pages/year-detail/year-detail",
     "pages/privacy/privacy"
   ],
   "window": {
