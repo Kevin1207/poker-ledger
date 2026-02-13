@@ -1,0 +1,38 @@
+<!--pages/privacy/privacy.wxml-->
+<view class="container">
+  <view class="title">隐私政策</view>
+  
+  <view class="section">
+    <view class="subtitle">1. 信息收集</view>
+    <text class="content">本小程序仅收集您主动输入的学习记录数据，包括金额、日期和备注信息。我们不会收集您的其他个人信息。</text>
+  </view>
+
+  <view class="section">
+    <view class="subtitle">2. 信息使用</view>
+    <text class="content">您的记录数据仅用于在小程序内展示和统计分析，不会用于其他任何商业用途。</text>
+  </view>
+
+  <view class="section">
+    <view class="subtitle">3. 信息存储</view>
+    <text class="content">您的数据通过微信云开发安全存储，仅您本人可以访问。我们采用严格的数据安全措施保护您的信息。</text>
+  </view>
+
+  <view class="section">
+    <view class="subtitle">4. 信息共享</view>
+    <text class="content">我们不会与任何第三方共享、出售或交换您的个人信息。</text>
+  </view>
+
+  <view class="section">
+    <view class="subtitle">5. 用户权利</view>
+    <text class="content">您可以随时在小程序内查看、修改或删除您的记录数据。如需清空所有数据，请联系我们。</text>
+  </view>
+
+  <view class="section">
+    <view class="subtitle">6. 联系我们</view>
+    <text class="content">如对本隐私政策有任何疑问，请通过小程序内的反馈功能联系我们。</text>
+  </view>
+
+  <view class="footer">
+    <text>最后更新时间：2026年2月</text>
+  </view>
+</view>

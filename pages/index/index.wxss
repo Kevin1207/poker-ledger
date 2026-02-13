@@ -1,0 +1,383 @@
+/* pages/index/index.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.user-info {
+  background: white;
+  border-radius: 20rpx;
+  padding: 25rpx 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.08);
+  overflow: visible;
+}
+
+/* 未登录状态 */
+.user-not-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 0;
+  width: 100%;
+  overflow: visible;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.avatar-select-btn {
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  background: transparent !important;
+  border: none !important;
+  position: relative;
+  display: block !important;
+  line-height: normal !important;
+  overflow: visible !important;
+}
+
+.avatar-select-btn::after {
+  border: none !important;
+}
+
+.user-avatar-large {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 4rpx solid #f0f0f0;
+  box-shadow: 0 8rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.avatar-placeholder {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.avatar-icon-large {
+  width: 70rpx;
+  height: 70rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-icon-large::before {
+  content: '';
+  position: absolute;
+  top: 5rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28rpx;
+  height: 28rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+}
+
+.avatar-icon-large::after {
+  content: '';
+  position: absolute;
+  top: 38rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48rpx;
+  height: 32rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50% 50% 0 0;
+}
+
+.avatar-hint {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 昵称输入模态框 */
+.nickname-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600rpx;
+  background: white;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.modal-nickname-input {
+  width: 100%;
+  height: 80rpx;
+  background: #f5f5f5;
+  border-radius: 15rpx;
+  padding: 0 25rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+}
+
+.input-placeholder {
+  color: #ccc;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 20rpx;
+}
+
+.modal-btn {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 15rpx;
+  font-size: 28rpx;
+  border: none;
+}
+
+.modal-btn::after {
+  border: none;
+}
+
+.cancel-btn {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.confirm-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* 已登录状态 */
+.user-logged-in {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+.user-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 25rpx;
+  border: 3rpx solid #f0f0f0;
+}
+
+.user-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-nickname {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+.user-welcome {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 10rpx 30rpx rgba(102, 126, 234, 0.3);
+}
+
+.summary-title {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 28rpx;
+  margin-bottom: 15rpx;
+}
+
+.summary-amount {
+  font-size: 68rpx;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20rpx;
+}
+
+.summary-amount.win {
+  color: #4ade80;
+}
+
+.summary-amount.lose {
+  color: #f87171;
+}
+
+.summary-detail {
+  display: flex;
+  justify-content: space-around;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24rpx;
+}
+
+.add-btn {
+  background: #1AAD19;
+  color: white;
+  height: 100rpx;
+  border-radius: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  box-shadow: 0 8rpx 20rpx rgba(26, 173, 25, 0.3);
+}
+
+.add-icon {
+  font-size: 48rpx;
+  margin-right: 10rpx;
+}
+
+.records-section {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.empty-tip {
+  text-align: center;
+  color: #999;
+  padding: 60rpx 0;
+  font-size: 28rpx;
+}
+
+.record-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.record-item {
+  background: #f9fafb;
+  border-radius: 15rpx;
+  border-left: 4rpx solid #e5e7eb;
+  overflow: hidden;
+}
+
+.record-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25rpx;
+}
+
+.record-main:active {
+  background: #f3f4f6;
+}
+
+.record-left {
+  flex: 1;
+}
+
+.record-date {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 5rpx;
+}
+
+.record-note {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.record-amount {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.record-amount.win {
+  color: #4ade80;
+}
+
+.record-amount.lose {
+  color: #f87171;
+}
+
+.record-actions {
+  display: flex;
+  border-top: 1rpx solid #e5e7eb;
+}
+
+.action-btn {
+  flex: 1;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background: white;
+  border: none;
+  border-radius: 0;
+}
+
+.action-btn::after {
+  border: none;
+}
+
+.edit-btn {
+  color: #1AAD19;
+  border-right: 1rpx solid #e5e7eb;
+}
+
+.edit-btn:active {
+  background: #f0f9ff;
+}
+
+.delete-btn {
+  color: #ef4444;
+}
+
+.delete-btn:active {
+  background: #fef2f2;
+}

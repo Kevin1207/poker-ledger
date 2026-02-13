@@ -1,0 +1,96 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="user-info">
+    <!-- 未登录状态：显示默认头像，点击设置 -->
+    <view wx:if="{{!userInfo}}" class="user-not-login">
+      <!-- 头像选择按钮（透明覆盖） -->
+      <button class="avatar-select-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+        <image wx:if="{{tempAvatarUrl}}" class="user-avatar-large" src="{{tempAvatarUrl}}" mode="aspectFill"></image>
+        <view wx:else class="user-avatar-large avatar-placeholder">
+          <view class="avatar-icon-large"></view>
+        </view>
+      </button>
+      <text class="avatar-hint">点击设置头像和昵称</text>
+      
+      <!-- 昵称输入框（隐藏，通过弹窗触发） -->
+      <view wx:if="{{showNicknameInput}}" class="nickname-modal">
+        <view class="modal-mask" bindtap="closeNicknameInput"></view>
+        <view class="modal-content">
+          <view class="modal-title">请输入昵称</view>
+          <input 
+            type="nickname" 
+            class="modal-nickname-input" 
+            placeholder="请输入昵称" 
+            value="{{tempNickName}}"
+            bindinput="onNicknameInput"
+            bindconfirm="onSaveUserInfo"
+            focus="{{showNicknameInput}}"
+            placeholder-class="input-placeholder"
+          />
+          <view class="modal-buttons">
+            <button class="modal-btn cancel-btn" bindtap="closeNicknameInput">取消</button>
+            <button class="modal-btn confirm-btn" bindtap="onSaveUserInfo">确定</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 已登录状态：显示用户信息 -->
+    <view wx:else class="user-logged-in">
+      <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      <view class="user-detail">
+        <text class="user-nickname">{{userInfo.nickName}}</text>
+        <text class="user-welcome">欢迎使用学习记账本</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 本月统计卡片 -->
+  <view class="summary-card">
+    <view class="summary-title">本月战况</view>
+    <view class="summary-amount {{currentMonthTotal >= 0 ? 'win' : 'lose'}}">
+      {{currentMonthTotal >= 0 ? '+' : ''}}{{currentMonthTotal}}
+    </view>
+    <view class="summary-detail">
+      <text>共 {{currentMonthCount}} 次</text>
+      <text>赢 {{currentMonthWin}} 次</text>
+      <text>输 {{currentMonthLose}} 次</text>
+    </view>
+  </view>
+
+  <!-- 添加记录按钮 -->
+  <view class="add-btn" bindtap="goToAdd">
+    <text class="add-icon">+</text>
+    <text>添加记录</text>
+  </view>
+
+  <!-- 记录列表 -->
+  <view class="records-section">
+    <view class="section-title">最近记录</view>
+    <view wx:if="{{records.length === 0}}" class="empty-tip">
+      还没有记录，点击上方按钮开始记账吧~
+    </view>
+    <view wx:else class="record-list">
+      <view class="record-item" wx:for="{{records}}" wx:key="_id">
+        <view class="record-main" bindtap="goToEdit" data-id="{{item._id}}">
+          <view class="record-left">
+            <view class="record-date">{{item.date}}</view>
+            <view wx:if="{{item.note}}" class="record-note">{{item.note}}</view>
+          </view>
+          <view class="record-amount {{item.amount >= 0 ? 'win' : 'lose'}}">
+            {{item.amount >= 0 ? '+' : ''}}{{item.amount}}
+          </view>
+        </view>
+        <view class="record-actions">
+          <button class="action-btn edit-btn" bindtap="goToEdit" data-id="{{item._id}}">
+            编辑
+          </button>
+          <button class="action-btn delete-btn" bindtap="deleteRecord" data-id="{{item._id}}">
+            删除
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

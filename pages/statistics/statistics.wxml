@@ -1,0 +1,76 @@
+<!--pages/statistics/statistics.wxml-->
+<view class="container">
+  <!-- Tab 切换 -->
+  <view class="tab-bar">
+    <view class="tab-item {{activeTab === 'month' ? 'active' : ''}}" bindtap="switchToMonth">
+      按月统计
+    </view>
+    <view class="tab-item {{activeTab === 'year' ? 'active' : ''}}" bindtap="switchToYear">
+      按年统计
+    </view>
+  </view>
+
+  <!-- 按月统计 -->
+  <view wx:if="{{activeTab === 'month'}}" class="statistics-content">
+    <view wx:if="{{monthlyStats.length === 0}}" class="empty-tip">
+      暂无数据
+    </view>
+    <view wx:else class="stats-list">
+      <view class="stat-card" wx:for="{{monthlyStats}}" wx:key="yearMonth">
+        <view class="stat-header">
+          <text class="stat-period">{{item.yearMonth}}</text>
+          <text class="stat-count">{{item.count}} 次</text>
+        </view>
+        <view class="stat-amount {{item.total >= 0 ? 'win' : 'lose'}}">
+          {{item.total >= 0 ? '+' : ''}}{{item.total}}
+        </view>
+        <view class="stat-detail">
+          <view class="detail-item win">
+            <text class="detail-label">赢</text>
+            <text class="detail-value">{{item.winCount}} 次</text>
+          </view>
+          <view class="detail-item lose">
+            <text class="detail-label">输</text>
+            <text class="detail-value">{{item.loseCount}} 次</text>
+          </view>
+          <view class="detail-item" wx:if="{{item.count > 0}}">
+            <text class="detail-label">胜率</text>
+            <text class="detail-value">{{item.winRate}}%</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 按年统计 -->
+  <view wx:if="{{activeTab === 'year'}}" class="statistics-content">
+    <view wx:if="{{yearlyStats.length === 0}}" class="empty-tip">
+      暂无数据
+    </view>
+    <view wx:else class="stats-list">
+      <view class="stat-card" wx:for="{{yearlyStats}}" wx:key="year">
+        <view class="stat-header">
+          <text class="stat-period">{{item.year}} 年</text>
+          <text class="stat-count">{{item.count}} 次</text>
+        </view>
+        <view class="stat-amount {{item.total >= 0 ? 'win' : 'lose'}}">
+          {{item.total >= 0 ? '+' : ''}}{{item.total}}
+        </view>
+        <view class="stat-detail">
+          <view class="detail-item win">
+            <text class="detail-label">赢</text>
+            <text class="detail-value">{{item.winCount}} 次</text>
+          </view>
+          <view class="detail-item lose">
+            <text class="detail-label">输</text>
+            <text class="detail-value">{{item.loseCount}} 次</text>
+          </view>
+          <view class="detail-item" wx:if="{{item.count > 0}}">
+            <text class="detail-label">胜率</text>
+            <text class="detail-value">{{item.winRate}}%</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

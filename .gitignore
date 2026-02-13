@@ -1,0 +1,21 @@
+# 微信小程序
+.DS_Store
+node_modules/
+miniprogram_npm/
+
+# 云开发
+cloudbase/
+
+# 配置文件
+project.private.config.json
+
+# 日志
+*.log
+npm-debug.log*
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
