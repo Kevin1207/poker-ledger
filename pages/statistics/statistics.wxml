@@ -16,7 +16,7 @@
       暂无数据
     </view>
     <view wx:else class="stats-list">
-      <view class="stat-card" wx:for="{{monthlyStats}}" wx:key="yearMonth">
+      <view class="stat-card" wx:for="{{monthlyStats}}" wx:key="yearMonth" bindtap="goToMonthDetail" data-yearmonth="{{item.yearMonth}}">
         <view class="stat-header">
           <text class="stat-period">{{item.yearMonth}}</text>
           <text class="stat-count">{{item.count}} 次</text>

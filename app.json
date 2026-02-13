@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/add/add",
     "pages/statistics/statistics",
+    "pages/month-detail/month-detail",
     "pages/privacy/privacy"
   ],
   "window": {

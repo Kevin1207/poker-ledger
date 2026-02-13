@@ -68,5 +68,14 @@ Page({
     this.setData({
       activeTab: 'year'
     })
+  },
+
+  // 跳转到月度详情页面
+  goToMonthDetail(e) {
+    const { yearmonth } = e.currentTarget.dataset
+    console.log('点击月份:', yearmonth)
+    wx.navigateTo({
+      url: `/pages/month-detail/month-detail?yearMonth=${yearmonth}`
+    })
   }
 })

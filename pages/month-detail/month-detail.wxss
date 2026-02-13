@@ -1,0 +1,151 @@
+/* pages/month-detail/month-detail.wxss */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+  padding: 20rpx;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 10rpx 30rpx rgba(102, 126, 234, 0.3);
+}
+
+.page-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.page-summary {
+  display: flex;
+  align-items: baseline;
+  gap: 20rpx;
+}
+
+.summary-amount {
+  font-size: 56rpx;
+  font-weight: bold;
+}
+
+.summary-amount.win {
+  color: #4ade80;
+}
+
+.summary-amount.lose {
+  color: #f87171;
+}
+
+.summary-count {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.records-section {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.08);
+}
+
+.empty-tip {
+  text-align: center;
+  color: #999;
+  padding: 80rpx 0;
+  font-size: 28rpx;
+}
+
+.record-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.record-item {
+  background: #f9fafb;
+  border-radius: 15rpx;
+  border-left: 4rpx solid #e5e7eb;
+  overflow: hidden;
+}
+
+.record-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25rpx;
+}
+
+.record-main:active {
+  background: #f3f4f6;
+}
+
+.record-left {
+  flex: 1;
+}
+
+.record-date {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 5rpx;
+}
+
+.record-note {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.record-amount {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.record-amount.win {
+  color: #4ade80;
+}
+
+.record-amount.lose {
+  color: #f87171;
+}
+
+.record-actions {
+  display: flex;
+  border-top: 1rpx solid #e5e7eb;
+}
+
+.action-btn {
+  flex: 1;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background: white;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.action-btn::after {
+  border: none;
+}
+
+.edit-btn {
+  color: #667eea;
+  border-right: 1rpx solid #e5e7eb;
+}
+
+.edit-btn:active {
+  background: #f3f4f6;
+}
+
+.delete-btn {
+  color: #ef4444;
+}
+
+.delete-btn:active {
+  background: #fee2e2;
+}

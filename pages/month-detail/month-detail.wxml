@@ -1,0 +1,41 @@
+<!--pages/month-detail/month-detail.wxml-->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-header">
+    <text class="page-title">{{yearMonth}}</text>
+    <view class="page-summary">
+      <text class="summary-amount {{monthTotal >= 0 ? 'win' : 'lose'}}">
+        {{monthTotal >= 0 ? '+' : ''}}{{monthTotal}}
+      </text>
+      <text class="summary-count">共 {{records.length}} 次</text>
+    </view>
+  </view>
+
+  <!-- 记录列表 -->
+  <view class="records-section">
+    <view wx:if="{{records.length === 0}}" class="empty-tip">
+      本月还没有记录
+    </view>
+    <view wx:else class="record-list">
+      <view class="record-item" wx:for="{{records}}" wx:key="_id">
+        <view class="record-main" bindtap="goToEdit" data-id="{{item._id}}">
+          <view class="record-left">
+            <view class="record-date">{{item.date}}</view>
+            <view wx:if="{{item.note}}" class="record-note">{{item.note}}</view>
+          </view>
+          <view class="record-amount {{item.amount >= 0 ? 'win' : 'lose'}}">
+            {{item.amount >= 0 ? '+' : ''}}{{item.amount}}
+          </view>
+        </view>
+        <view class="record-actions">
+          <button class="action-btn edit-btn" bindtap="goToEdit" data-id="{{item._id}}">
+            编辑
+          </button>
+          <button class="action-btn delete-btn" bindtap="deleteRecord" data-id="{{item._id}}">
+            删除
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

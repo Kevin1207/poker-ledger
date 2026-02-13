@@ -51,6 +51,24 @@
   border-radius: 20rpx;
   padding: 30rpx;
   box-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.stat-card:active {
+  background: #f9fafb;
+  transform: scale(0.98);
+}
+
+.stat-card::after {
+  content: '›';
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50rpx;
+  color: #ccc;
+  font-weight: 300;
 }
 
 .stat-header {
