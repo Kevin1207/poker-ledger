@@ -40,11 +40,15 @@ Page({
         console.log('查询到记录数：', res.data.length)
         const allRecords = res.data
         
-        // 过滤出指定月份的记录
+        // 过滤出指定月份的记录（使用 date 字段而不是 createTime）
         const monthRecords = allRecords.filter(record => {
-          const recordYearMonth = util.getYearMonth(new Date(record.createTime))
-          return recordYearMonth === yearMonth
+          // record.date 格式为 "YYYY-MM-DD"
+          // yearMonth 格式为 "YYYY-MM"
+          return record.date && record.date.startsWith(yearMonth)
         })
+        
+        console.log('过滤后的记录数：', monthRecords.length)
+        console.log('yearMonth:', yearMonth)
         
         // 计算本月总额
         let monthTotal = 0

@@ -40,12 +40,15 @@ Page({
         console.log('查询到记录数：', res.data.length)
         const allRecords = res.data
         
-        // 过滤出指定年份的记录
+        // 过滤出指定年份的记录（使用 date 字段）
         const yearRecords = allRecords.filter(record => {
-          const recordDate = new Date(record.createTime)
-          const recordYear = recordDate.getFullYear()
-          return recordYear === parseInt(year)
+          // record.date 格式为 "YYYY-MM-DD"
+          // year 格式为 "YYYY"
+          return record.date && record.date.startsWith(year)
         })
+        
+        console.log('过滤后的记录数：', yearRecords.length)
+        console.log('年份:', year)
         
         // 按月分组统计
         const monthlyData = {}
@@ -53,8 +56,8 @@ Page({
         let totalCount = 0
         
         yearRecords.forEach(record => {
-          const recordDate = new Date(record.createTime)
-          const month = recordDate.getMonth() + 1 // 1-12
+          // 从 date 字段提取月份（YYYY-MM-DD）
+          const month = parseInt(record.date.substring(5, 7)) // 提取 MM 部分
           
           if (!monthlyData[month]) {
             monthlyData[month] = {
