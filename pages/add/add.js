@@ -185,5 +185,21 @@ Page({
           })
         })
     }
+  },
+
+  // 分享给好友
+  onShareAppMessage() {
+    return {
+      title: '学习记账本 - 一起记录学习战况吧',
+      path: '/pages/index/index',
+      imageUrl: ''
+    }
+  },
+
+  // 分享到朋友圈
+  onShareTimeline() {
+    return {
+      title: '学习记账本 - 记录学习战况'
+    }
   }
 })

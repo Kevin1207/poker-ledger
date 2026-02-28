@@ -86,5 +86,21 @@ Page({
     wx.navigateTo({
       url: `/pages/year-detail/year-detail?year=${year}`
     })
+  },
+
+  // 分享给好友
+  onShareAppMessage() {
+    return {
+      title: '学习记账本 - 查看我的学习统计',
+      path: '/pages/index/index',
+      imageUrl: ''
+    }
+  },
+
+  // 分享到朋友圈
+  onShareTimeline() {
+    return {
+      title: '学习记账本 - 记录学习战况'
+    }
   }
 })

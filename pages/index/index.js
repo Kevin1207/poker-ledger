@@ -206,5 +206,21 @@ Page({
         }
       }
     })
+  },
+
+  // 分享给好友
+  onShareAppMessage() {
+    return {
+      title: '学习记账本 - 记录你的学习战况',
+      path: '/pages/index/index',
+      imageUrl: '' // 可以设置自定义分享图片
+    }
+  },
+
+  // 分享到朋友圈
+  onShareTimeline() {
+    return {
+      title: '学习记账本 - 记录你的学习战况'
+    }
   }
 })
