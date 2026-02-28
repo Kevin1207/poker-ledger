@@ -41,7 +41,7 @@
       <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
       <view class="user-detail">
         <text class="user-nickname">{{userInfo.nickName}}</text>
-        <text class="user-welcome">欢迎使用学习记账本</text>
+        <text class="user-welcome">欢迎使用欢乐记账本</text>
       </view>
     </view>
   </view>
