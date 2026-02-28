@@ -48,7 +48,7 @@ Page({
         wx.hideLoading()
         const record = res.data
         
-        // 根据金额判断是赢还是输
+        // 根据欢乐豆数量判断是赢还是输
         const isWin = record.amount >= 0
         const amount = Math.abs(record.amount).toString()
         
@@ -82,7 +82,7 @@ Page({
     this.setData({ isWin: false })
   },
 
-  // 金额输入
+  // 欢乐豆输入
   onAmountInput(e) {
     this.setData({
       amount: e.detail.value
@@ -107,16 +107,16 @@ Page({
   onSubmit() {
     const { isWin, amount, note, date, isEdit, recordId } = this.data
 
-    // 验证金额
+    // 验证欢乐豆数量
     if (!amount || parseFloat(amount) <= 0) {
       wx.showToast({
-        title: '请输入有效金额',
+        title: '请输入有效欢乐豆数量',
         icon: 'none'
       })
       return
     }
 
-    // 计算实际金额（输的情况为负数）
+    // 计算实际欢乐豆（输的情况为负数）
     const finalAmount = isWin ? parseFloat(amount) : -parseFloat(amount)
 
     // 创建/更新记录对象

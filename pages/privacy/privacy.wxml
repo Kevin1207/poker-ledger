@@ -4,7 +4,7 @@
   
   <view class="section">
     <view class="subtitle">1. 信息收集</view>
-    <text class="content">本小程序仅收集您主动输入的学习记录数据，包括金额、日期和备注信息。我们不会收集您的其他个人信息。</text>
+    <text class="content">本小程序仅收集您主动输入的学习记录数据，包括欢乐豆数量、日期和备注信息。我们不会收集您的其他个人信息。</text>
   </view>
 
   <view class="section">

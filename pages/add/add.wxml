@@ -3,9 +3,9 @@
   <view class="form-card">
     <view class="form-title">添加记录</view>
     
-    <!-- 金额输入 -->
+    <!-- 欢乐豆输入 -->
     <view class="form-item">
-      <view class="label">输赢金额</view>
+      <view class="label">输赢欢乐豆</view>
       <view class="amount-input-group">
         <button class="type-btn {{isWin ? 'active-win' : ''}}" bindtap="selectWin">
           赢 +
@@ -17,7 +17,7 @@
       <input 
         class="amount-input {{isWin ? 'win' : 'lose'}}" 
         type="digit" 
-        placeholder="请输入金额" 
+        placeholder="请输入欢乐豆数量" 
         value="{{amount}}"
         bindinput="onAmountInput"
       />
